@@ -71,10 +71,7 @@ return (
       <div className="row">
         <h1>Tasks</h1>
         <button
-          onClick={() => {
-            localStorage.removeItem("token");
-            onLogout();
-          }}
+          onClick={onLogout}
         >
           Logout
         </button>

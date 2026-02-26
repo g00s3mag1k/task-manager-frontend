@@ -26,7 +26,7 @@ export default function Login({ onSuccess }) {
 return (
   <div className="container">
     <div className="card">
-      <h2>Login</h2>
+      <h2>Task Manager Login</h2>
 
       <form onSubmit={handleSubmit}>
         <input
