@@ -26,4 +26,4 @@ Full-stack task manager with JWT auth (login)  + CRUD tasks.
 ```bash
 cd frontend
 npm install
-npm run dev
+npm start
