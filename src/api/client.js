@@ -16,9 +16,12 @@ export async function apiRequest(path, options = {}) {
 
     // Auto-logout on auth failures
     const message = (data.error || data.message || "").toLowerCase();
+    const isAuthRoute = path.startsWith("/api/auth/login");
+
     const authFailed = 
-    res.status === 401 || res.status === 403 ||
-    message.includes("invalid token") || message.includes("expired");
+    !isAuthRoute && 
+    (res.status === 401 || res.status === 403 ||
+    message.includes("invalid token") || message.includes("expired"));
 
     if (authFailed) {
         localStorage.removeItem("token");
