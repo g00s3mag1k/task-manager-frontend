@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { apiRequest } from "../api/client";
 
-export default function Login({ onSuccess }) {
+export default function Login({ onSuccess, onGoRegister }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [err, setErr] = useState("");
@@ -48,6 +48,12 @@ return (
 
         {err && <div className="error">{err}</div>}
       </form>
+
+      <div style={{ marginTop: 12 }}>
+        <button type='button' onClick={onGoRegister}>
+          Create Account 
+        </button>
+      </div>
     </div>
   </div>
 );
