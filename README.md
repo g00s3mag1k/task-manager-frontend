@@ -41,7 +41,9 @@ Full-stack task management application with secure user authentication, allowing
 ## 🧩 Architecture Overview
 
 React Frontend → Express API → MongoDB
+
 ↓ ↓
+
 JWT stored 
 Protected routes in localStorage with middleware
 
