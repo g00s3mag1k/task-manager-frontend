@@ -42,7 +42,7 @@ export default function Dashboard({ onLogout }) {
     async function toggleDone(task) {
         setErr("");
         try {
-            const nextStatus = task.status === "done" ? "todo" : "done";
+            const nextStatus = task.status === "done" ? "todo❗" : "done";
             const data = await apiRequest(`/api/tasks/${task._id || task.id}`, {
                 method: "PATCH",
                 body: JSON.stringify({ status: nextStatus }),
@@ -117,7 +117,7 @@ return (
                   <div style={{ fontWeight: 700 }}>
                     {t.title}{" "}
                     <span style={{ fontWeight: 400, opacity: 0.7 }}>
-                      ({t.status})
+                      ({t.status === 'done' ? 'done✅' : t.status})
                     </span>
                   </div>
                   {t.description ? (
